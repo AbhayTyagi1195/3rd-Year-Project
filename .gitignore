@@ -3,4 +3,5 @@ archive.zip
 venv
 __pycache__/
 *.csv
-*.pkl
+scaler.pkl
+model.pkl
