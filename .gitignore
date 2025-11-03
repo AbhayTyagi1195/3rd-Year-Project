@@ -3,3 +3,4 @@ archive.zip
 venv
 __pycache__/
 *.csv
+*.pkl
