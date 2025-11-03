@@ -34,25 +34,19 @@ if __name__ == '__main__':
         'newbalanceOrig': [40000],
         'oldbalanceDest': [0],
         'newbalanceDest': [0],
-        'errorBalanceOrig': [0],
-        'errorBalanceDest': [10000]
+        'isFlaggedFraud': [0]
     })
 
-    # Drop columns not used in scaling
-    data = data.drop(columns=['errorBalanceOrig', 'errorBalanceDest'])
-    # One-hot encode the 'type' column
-    data = pd.get_dummies(data, columns=['type'])
+    # Encode 'type' column using factorize (same as training)
+    # TRANSFER=0, PAYMENT=1, CASH_OUT=2, DEBIT=3, CASH_IN=4
+    type_mapping = {'TRANSFER': 0, 'PAYMENT': 1, 'CASH_OUT': 2, 'DEBIT': 3, 'CASH_IN': 4}
+    data['type'] = data['type'].map(type_mapping)
 
-    # Ensure all expected columns are present
-    expected_columns = ['step', 'amount', 'oldbalanceOrg', 'newbalanceOrig', 'oldbalanceDest', 'newbalanceDest', 'type_TRANSFER', 'isFlaggedFraud']
-    for col in expected_columns:
-        if col not in data.columns:
-            data[col] = 0
-
-    # Preprocess the data
+    # Preprocess the data (apply scaling)
     data_processed = preprocess_data(data, scaler)
 
     # Example prediction using the loaded model
     prediction = model.predict(data_processed)
 
     print("Prediction:", prediction)
+    print("Fraud detected!" if prediction[0] == 1 else "Transaction is legitimate.")

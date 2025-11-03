@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load your dataset
-data = pd.read_csv(r'C:\Users\Abhay Tyagi\OneDrive - ABES\Desktop\3RD Year Project\Final Project\PS_20174392719_1491204439457_log.csv')
+data = pd.read_csv('archive/PS_20174392719_1491204439457_log.csv')
 
 # Drop non-relevant columns
 data.drop(['nameOrig', 'nameDest'], axis=1, inplace=True)

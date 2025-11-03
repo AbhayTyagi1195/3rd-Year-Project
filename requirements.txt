@@ -1,6 +1,18 @@
-streamlit
-xgboost
-joblib
-numpy
-pandas
-scikit-learn
+# Core ML and Data Processing
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0,<3.0.0
+scikit-learn>=1.3.0,<2.0.0
+
+# Model Training and Deployment
+xgboost>=2.0.0,<3.0.0
+joblib>=1.3.0,<2.0.0
+
+# Web Application
+streamlit>=1.28.0,<2.0.0
+
+# Visualization (for notebook)
+matplotlib>=3.7.0,<4.0.0
+seaborn>=0.12.0,<1.0.0
+
+# Additional Dependencies
+scipy>=1.11.0,<2.0.0

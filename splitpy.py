@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # Load your dataset
-df = pd.read_csv(r'C:\Users\Abhay Tyagi\OneDrive - ABES\Desktop\3RD Year Project\Final Project\PS_20174392719_1491204439457_log.csv')
+df = pd.read_csv('archive/PS_20174392719_1491204439457_log.csv')
 
 # Use 'isFraud' as the target column for stratification
 target = 'isFraud'
