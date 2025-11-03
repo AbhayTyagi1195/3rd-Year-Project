@@ -1,6 +1,5 @@
 archive.zip
 /archive
-*.pkl
 venv
 __pycache__/
 *.csv
